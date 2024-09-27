@@ -1,62 +1,82 @@
 /* OrderHistory.css */
 
 .order-history-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #000;
-    color: #fff;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .sort-options {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-size: 1rem;
-  }
-  
-  select {
-    padding: 5px;
-    font-size: 1rem;
-    border-radius: 4px;
-    border: none;
-  }
-  
-  .order-history-table {
-    width: 400px;
-    border-collapse: collapse;
-  }
-  
-  th,
-  td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #222;
-  }
-  
-  tr:hover {
-    background-color: #444;
-  }
-  
-  th,
-  td {
-    border-bottom: 1px solid #fff;
-  }
-  
-  
+  /* Add a max-width to center the container */
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  /* Add some padding to create space between the container and its content */
+  padding: 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  /* Add some font weight to make the heading stand out */
+  font-weight: bold;
+}
+
+.sort-options {
+  margin-bottom: 20px;
+  /* Add some padding to create space between the sort options and the table */
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+label {
+  font-size: 1rem;
+  /* Add some margin to create space between the label and the select element */
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  /* Add some width to make the select element more visible */
+  width: 150px;
+}
+
+.order-history-table {
+  width: 400px;
+  border-collapse: collapse;
+  /* Add some margin to create space between the table and the container */
+  margin: 20px 0;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  /* Add some border spacing to create space between the table cells */
+  border-spacing: 0;
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+  /* Add some font weight to make the table headers stand out */
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #222;
+}
+
+tr:hover {
+  background-color: #444;
+}
+
+th,
+td {
+  border-bottom: 1px solid #fff;
+  /* Add some border radius to create a rounded corner effect */
+  border-radius: 4px;
+}
