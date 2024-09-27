@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import './Signup.css';
 
 const Container = styled.div`
   display: flex;
