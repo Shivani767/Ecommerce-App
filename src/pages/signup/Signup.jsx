@@ -47,13 +47,27 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const ErrorMsg = styled.p`
+  color: #red;
+  font-size: 0.8rem;
+`;
+
+const SuccessMsg = styled.p`
+  color: #green;
+  font-size: 0.8rem;
+`;
+
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       let res = await fetch('http://localhost:3001/api/signup', {
@@ -67,21 +81,20 @@ const Signup = () => {
           password,
         }),
       });
+
       if (res.status === 201) {
-        showAlertSignup();
+        setSuccess(true);
         setUsername('');
         setPassword('');
         setEmail('');
       } else {
-        console.log('Error');
+        setError('Error signing up. Please try again.');
       }
     } catch (err) {
-      console.log(err);
+      setError('Error signing up. Please try again.');
+    } finally {
+      setLoading(false);
     }
-  };
-
-  const showAlertSignup = () => {
-    alert('Signup successful!');
   };
 
   return (
@@ -96,6 +109,7 @@ const Signup = () => {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
+          {error && error.username && <ErrorMsg>{error.username}</ErrorMsg>}
 
           <Label>Email</Label>
           <Input
@@ -104,6 +118,7 @@ const Signup = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+          {error && error.email && <ErrorMsg>{error.email}</ErrorMsg>}
 
           <Label>Password</Label>
           <Input
@@ -112,10 +127,17 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          {error && error.password && <ErrorMsg>{error.password}</ErrorMsg>}
 
-          <Button type="submit">Sign Up</Button>
+          {loading ? (
+            <Button type="submit" disabled>Loading...</Button>
+          ) : (
+            <Button type="submit">Sign Up</Button>
+          )}
         </Form>
 
+        {success && <SuccessMsg>Signup successful!</SuccessMsg>}
+        {error && <ErrorMsg>{error}</ErrorMsg>}
       </FormContainer>
     </Container>
   );
