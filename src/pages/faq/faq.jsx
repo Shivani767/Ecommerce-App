@@ -25,19 +25,21 @@ export const FAQ = () => {
   return (
     <div className="faq-container">
       <h2>Frequently Asked Questions</h2>
-      {faqs.map((faq) => (
-        <div className="faq-item" key={faq.id}>
-          <div
-            className={`faq-question ${activeFAQ === faq.id ? "active" : ""}`}
-            onClick={() => toggleFAQ(faq.id)}
-          >
-            {faq.question}
+      <div className="faq-items">
+        {faqs.map((faq) => (
+          <div className="faq-item" key={faq.id}>
+            <div
+              className={`faq-question ${activeFAQ === faq.id ? "active" : ""}`}
+              onClick={() => toggleFAQ(faq.id)}
+            >
+              {faq.question}
+            </div>
+            <div className={`faq-answer ${activeFAQ === faq.id ? "show" : ""}`}>
+              {faq.answer}
+            </div>
           </div>
-          <div className={`faq-answer ${activeFAQ === faq.id ? "show" : ""}`}>{faq.answer}</div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
-
-
