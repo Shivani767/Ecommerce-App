@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./faq.css";
 
 export const FAQ = () => {
-  const [faqs, setFaqs] = useState([
+  const [faqs] = useState([
     {
       id: 1,
       question: "How can I track my order?",
