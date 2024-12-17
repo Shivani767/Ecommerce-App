@@ -6,23 +6,33 @@ export const CartItem = (props) => {
   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
     useContext(ShopContext);
 
+  const handleInputChange = (e) => {
+    const value = Number(e.target.value);
+    if (!isNaN(value)) {
+      updateCartItemCount(value, id);
+    }
+  };
+
   return (
     <div className="cartItem">
-      <img src="productImage.png" alt="Product Image Description"/>
+      <img src={productImage} alt={`${productName} image`} />
       <div className="description">
         <p>
           <b>{productName}</b>
         </p>
-        <p> Price: ${price}</p>
+        <p>Price: ${price}</p>
         <div className="countHandler">
-          <button onClick={() => removeFromCart(id)}> - </button>
+          <button onClick={() => removeFromCart(id)}>-</button>
           <input
+            type="number"
             value={cartItems[id]}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
+            onChange={handleInputChange}
+            min="0" // Ensures the count cannot go below 0
           />
-          <button onClick={() => addToCart(id)}> + </button>
+          <button onClick={() => addToCart(id)}>+</button>
         </div>
       </div>
     </div>
   );
 };
+
