@@ -9,7 +9,7 @@
   color: #fff;
 }
 
-.company-name h2 {
+.company-name h1 {
   font-size: 1.5rem;
   margin: 0;
 }
@@ -31,7 +31,7 @@
 }
 
 .links a svg {
-  fill: #fff;
+  fill: #444;
   transition: fill 0.3s;
 }
 
