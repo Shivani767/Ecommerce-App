@@ -6,8 +6,6 @@
 }
 
 body {
-  padding: 0;
-  margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient Background */
   color: #ffffff;
@@ -23,7 +21,6 @@ html {
 .App {
   width: 100%;
   min-height: 100vh;
-  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,9 +69,26 @@ a:hover {
 }
 
 /* Responsive Breakpoints */
+
+/* Desktop */
+@media (min-width: 769px) {
+  .App {
+    padding: 20px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
   .App {
-    padding: 10px;
+    padding: 15px;
   }
 
   p {
@@ -82,16 +96,21 @@ a:hover {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
   .App {
-    border-radius: 0; /* No border radius on small screens */
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 }
