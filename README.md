@@ -1,10 +1,10 @@
-# MarketMaxEcommerce Website
+# ScrollMeEcommerce Website
 
-MarketMax is an open-source, feature-rich eCommerce platform that provides a modern shopping experience. Built with **JavaScript**, **React**, **Styled Components**, **Node.js (Express.js)**, and **MongoDB**, ScrollMe offers a robust front-end with a highly scalable backend. This project is ideal for those looking to contribute to an eCommerce solution or understand the integration of modern web technologies.
+ScrollMe is an open-source, feature-rich eCommerce platform that provides a modern shopping experience. Built with **JavaScript**, **React**, **Styled Components**, **Node.js (Express.js)**, and **MongoDB**, ScrollMe offers a robust front-end with a highly scalable backend. This project is ideal for those looking to contribute to an eCommerce solution or understand the integration of modern web technologies.
 
 ## Tech Stack
 
-MarketMax is built using the following technologies:
+ScrollMe is built using the following technologies:
 
 ### Frontend
 - **JavaScript (ES6+)**: Core language for building dynamic features.
